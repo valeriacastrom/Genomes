@@ -11,7 +11,7 @@
 # This script downloads Mehreen's genomes (parental and infantile orgin), trims the paired reads, performs quality control,
 # and profiles each read based on a MetaPhlAn database. It also generates tables and visual diagrams.
 
-# Load modules
+#Load modules
 module purge all
 module load sratoolkit
 module load anaconda3
@@ -23,7 +23,7 @@ module load multiqc
 timestamp=$(date +%d%m%Y_%H%M)
 
 numberSRR="..."
-#workspaceDir="/projects/vcc4348/(valeria???)/gen_assembly/${numberSRR}_${timestamp}"
+workspaceDir="/home/vcc4348/genomes/${numberSRR}_${timestamp}"
 
 if [ -d $workspaceDir ]
 then
