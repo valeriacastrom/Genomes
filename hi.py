@@ -5,3 +5,7 @@ print('This is a bunch of code that I would not want to have to write in a stupi
 print('Grayson is cool')
 
 print('Andrew is cool')
+
+x = 'your mother'
+print(x)
+
