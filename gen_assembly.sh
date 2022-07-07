@@ -31,6 +31,8 @@ else
 	echo "Directory ${workspaceDir} has been made"
 fi
 
+cd ${workspaceDir}
+
 rawReadDir="${workspaceDir}/raw_reads"
 fastpDir="${workspaceDir}/fastp_trim"
 fastqcDir="${workspaceDir}/fastqc"
@@ -67,4 +69,4 @@ mv *fastqc.zip ${fastqcDir}
 
 #PART 5: SPADES
 cd ${fastqcDir}
- 
+
