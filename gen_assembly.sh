@@ -21,7 +21,7 @@ module load multiqc
 
 #PART 1: PATH
 timestamp=$(date +%d%m%Y_%H%M)
-numberSRR="..."
+numberSRR="hello"
 workspaceDir="/projects/b1042/HartmannLab/genomes-for-mehreen/AVG/${numberSRR}_${timestamp}" #AVG stands for andrew, valeria and grayson
 
 if [ -d $workspaceDir ]
@@ -42,7 +42,7 @@ mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir}
 #PART 2: DOWNLOAD
 # cd ${rawReads}
 
-# # fasterq-dump --split-files SRR8944124
+# # fasterq-dump --split-files NCH0002R
 # # fasterq-dump --split-files SRR8944125
 # # fasterq-dump --split-files SRR8944126
 # # fasterq-dump --split-files SRR8944127
