@@ -13,7 +13,7 @@
 
 #Load modules
 module purge all
-module load anaconda3
+#module load anaconda3
 module load fastqc
 module load multiqc
 module load spades
@@ -47,6 +47,8 @@ cd /projects/b1042/HartmannLab/genomes-for-mehreen/AVG/
 mv NCH0002R-M_S10_L001_R1_001.fastq.gz ${rawReadDir}
 mv NCH0002R-M_S10_L001_R2_001.fastq.gz ${rawReadDir}
 cd ${rawReadDir}
+
+source /software/anaconda2/etc/profile.d/conda.sh
 conda activate sequence_run
 fastp -i NCH0002R-M_S10_L001_R1_001.fastq.gz -I NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
 conda deactivate
