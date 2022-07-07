@@ -44,8 +44,8 @@ mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir}
 
 #PART 3: FASTP
 cd /projects/b1042/HartmannLab/genomes-for-mehreen/AVG/
-mv NCH0002R-M_S10_L001_R1_001.fastq.gz ${rawReadDir}
-mv NCH0002R-M_S10_L001_R2_001.fastq.gz ${rawReadDir}
+cp NCH0002R-M_S10_L001_R1_001.fastq.gz ${rawReadDir}
+cp NCH0002R-M_S10_L001_R2_001.fastq.gz ${rawReadDir}
 cd ${rawReadDir}
 
 source /software/anaconda2/etc/profile.d/conda.sh
