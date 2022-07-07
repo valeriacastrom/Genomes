@@ -13,11 +13,10 @@
 
 #Load modules
 module purge all
-module load sratoolkit
 module load anaconda3
 module load fastqc
 module load multiqc
-# module load bowtie2
+module load spades
 
 #PART 1: PATH
 timestamp=$(date +%d%m%Y_%H%M)
@@ -36,17 +35,36 @@ rawReadDir="${workspaceDir}/raw_reads"
 fastpDir="${workspaceDir}/fastp_trim"
 fastqcDir="${workspaceDir}/fastqc"
 spadesDir="${workspaceDir}/spades"
-
 mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir}
 
-#PART 2: DOWNLOAD
-# cd ${rawReads}
+#PART 2: COPY 
+#will do for all later 
 
-# # fasterq-dump --split-files NCH0002R
-# # fasterq-dump --split-files SRR8944125
-# # fasterq-dump --split-files SRR8944126
-# # fasterq-dump --split-files SRR8944127
-# # fasterq-dump --split-files SRR8944128
-# # fasterq-dump --split-files SRR8944129
+#PART 3: FASTP
+mv NCH0002R-M_S10_L001_R1_001.fastq.gz ${rawReadDir}
+mv NCH0002R-M_S10_L001_R2_001.fastq.gz ${rawReadDir}
+cd ${rawReadDir}
+conda activate sequence_run
+fastp -i NCH0002R-M_S10_L001_R1_001.fastq.gz -I NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
+conda deactivate
 
+mv out* ${fastpDir}/
+mv fastp.html fastp.json ${fastpDir}/
+#PART 4: FASTQC
+cd ${fastpDir}/
+
+# FASTQC analysis
+fastqc -t 12 *fq.gz
+
+# To move FastQC output into new directory
+mv *fastqc.html ${fastqcDir}
+mv *fastqc.zip ${fastqcDir}
+
+# MultiQC analysis
+# cd ${fastqcDir}
+# multiqc .
 # cd ${workspaceDir}
+
+#PART 5: SPADES
+cd ${fastqcDir}
+ 
