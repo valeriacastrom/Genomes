@@ -24,7 +24,7 @@ module load bowtie2
 #PART 1: PATH
 timestamp=$(date +%d%m%Y_%H%M)
 numberSRR="hello"
-workspaceDir="/projects/b1042/HartmannLab/genomes-for-mehreen/AVG/${numberSRR}_${timestamp}" #AVG stands for andrew, valeria and grayson
+workspaceDir="/projects/b1042/HartmannLab/genomes-for-mehreen/AVG/workspaces/${numberSRR}_${timestamp}" #AVG stands for andrew, valeria and grayson
 
 if [ -d $workspaceDir ]
 then
@@ -42,6 +42,7 @@ fastqcDir="${workspaceDir}/fastqc"
 spadesDir="${workspaceDir}/spades"
 mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir}
 
+
 #PART 2: COPY 
 #will do for all later 
 
@@ -54,7 +55,7 @@ cd ${rawReadDir}
 source /software/anaconda2/etc/profile.d/conda.sh
 conda activate paired_read
 fastp -i NCH0002R-M_S10_L001_R1_001.fastq.gz -I NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
-#conda deactivate
+conda deactivate
 
 mv out* ${fastpDir}/
 mv fastp.html fastp.json ${fastpDir}/
