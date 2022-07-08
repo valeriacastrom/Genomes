@@ -83,7 +83,7 @@ mv fastp.html fastp.json ${fastpDir}/
 cd ${fastpDir}/
 
 # FASTQC analysis
-fastqc -t 12 *fq.gz
+fastqc -t 12 *q.gz
 
 # To move FastQC output into new directory
 mv *fastqc.html ${fastqcDir}
