@@ -18,6 +18,9 @@ module load fastqc
 module load multiqc
 module load spades
 
+module load sratoolkit
+module load bowtie2
+
 #PART 1: PATH
 timestamp=$(date +%d%m%Y_%H%M)
 numberSRR="hello"
@@ -49,7 +52,7 @@ cp NCH0002R-M_S10_L001_R2_001.fastq.gz ${rawReadDir}
 cd ${rawReadDir}
 
 source /software/anaconda2/etc/profile.d/conda.sh
-conda activate 
+conda activate sequence_run
 fastp -i NCH0002R-M_S10_L001_R1_001.fastq.gz -I NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
 conda deactivate
 
