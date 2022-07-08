@@ -21,7 +21,12 @@ module load spades
 module load sratoolkit
 module load bowtie2
 
-#PART 1: PATH
+
+
+###########################
+###### PART 1: Path #######
+###########################
+
 timestamp=$(date +%d%m%Y_%H%M)
 numberSRR="hello"
 workspaceDir="/projects/b1042/HartmannLab/genomes-for-mehreen/AVG/workspaces/${numberSRR}_${timestamp}" #AVG stands for andrew, valeria and grayson
@@ -43,14 +48,23 @@ spadesDir="${workspaceDir}/spades"
 mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir}
 
 
-#PART 2: COPY 
-#will do for all later 
 
-#PART 3: FASTP
-cd /projects/b1042/HartmannLab/genomes-for-mehreen/AVG/
+
+###########################
+#### PART 2: Download #####
+###########################
+
+#will do for all later 
+cd /projects/b1042/HartmannLab/genomes-for-mehreen/AVG/raw_data
 cp NCH0002R-M_S10_L001_R1_001.fastq.gz ${rawReadDir}
 cp NCH0002R-M_S10_L001_R2_001.fastq.gz ${rawReadDir}
 cd ${rawReadDir}
+
+
+
+#####################
+### PART 3: FASTP ###
+#####################
 
 source /software/anaconda2/etc/profile.d/conda.sh
 conda activate paired_read
@@ -59,7 +73,13 @@ conda deactivate
 
 mv out* ${fastpDir}/
 mv fastp.html fastp.json ${fastpDir}/
-#PART 4: FASTQC
+
+
+
+######################
+### PART 3: FASTQC ###
+######################
+
 cd ${fastpDir}/
 
 # FASTQC analysis
@@ -70,10 +90,15 @@ mv *fastqc.html ${fastqcDir}
 mv *fastqc.zip ${fastqcDir}
 
 # MultiQC analysis
-# cd ${fastqcDir}
-# multiqc .
-# cd ${workspaceDir}
+cd ${fastqcDir}
+multiqc .
+cd ${workspaceDir}
 
-#PART 5: SPADES
+
+
+######################
+### PART 3: SPADES ###
+######################
+
 cd ${fastqcDir}
 
