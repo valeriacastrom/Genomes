@@ -101,4 +101,4 @@ cd ${workspaceDir}
 ######################
 
 cd ${fastqcDir}
-
+spades.py -1 out.R1.fastq.gz -2 out.R2.fastq.gz -o ${spadesDir} -t 40 -m 100 --meta
