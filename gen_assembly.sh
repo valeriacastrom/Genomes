@@ -13,7 +13,7 @@
 
 #Load modules
 module purge all
-module load anaconda2
+module load anaconda3
 module load fastqc
 module load multiqc
 module load spades
