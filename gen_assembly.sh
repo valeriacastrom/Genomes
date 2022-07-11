@@ -54,10 +54,16 @@ mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir}
 #### PART 2: Download #####
 ###########################
 
-#will do for all later 
+
 cd /projects/b1042/HartmannLab/genomes-for-mehreen/AVG/raw_data
+
+# one files
 cp NCH0002R-M_S10_L001_R1_001.fastq.gz ${rawReadDir}
 cp NCH0002R-M_S10_L001_R2_001.fastq.gz ${rawReadDir}
+
+# all file
+# cp *.fastq.gz ${rawReadDir}
+
 cd ${rawReadDir}
 
 
@@ -68,7 +74,27 @@ cd ${rawReadDir}
 
 source /software/anaconda2/etc/profile.d/conda.sh
 conda activate paired_read
+
+# one file
 fastp -i NCH0002R-M_S10_L001_R1_001.fastq.gz -I NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
+
+# all files
+# for i in $(ls *_1.fastq.gz) # Iterate through R1
+# do
+# 	i_sub=$(echo $i | cut -c1-10) # SRR accession number
+# 	for j in $(ls *_2.fastq.gz) # Iterate R2
+# 	do
+# 		j_sub=$(echo $j | cut -c1-10)
+# 		if [[ $i_sub == $j_sub ]] # Match reads via accession
+# 		then
+# 			fastp -i ${i} -I ${j} --out1 ${i_sub}_fastp_out.R1.fq.gz --out2 ${j_sub}_fastp_out.R2.fq.gz --detect_adapter_for_pe --thread 16 --length_required 50
+
+# 		fi
+
+# 	done
+
+# done
+
 conda deactivate
 
 mv out* ${fastpDir}/
@@ -101,4 +127,23 @@ cd ${workspaceDir}
 ######################
 
 cd ${fastpDir}
+
+# for one file
 spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 40 -m 100
+
+# for all files
+# for i in $(ls *fastp_out.R1.fq.gz) # Iterate through R1
+# do
+# 	i_sub=$(echo $i | cut -c1-10) # SRR accession number
+# 	for j in $(ls *fastp_out.R2.fq.gz) # Iterate R2
+# 	do
+# 		j_sub=$(echo $j | cut -c1-10)
+# 		if [[ $i_sub == $j_sub ]] # Match reads via accession
+# 		then
+# 			spades.py -1 ${i} -2 ${j} -o ${spadesDir} -t 40 -m 100
+
+# 		fi
+
+# 	done
+
+# done
