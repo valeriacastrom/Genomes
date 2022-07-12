@@ -20,6 +20,7 @@ module load spades
 
 module load sratoolkit
 module load bowtie2
+module load prodigal
 
 
 
@@ -45,7 +46,8 @@ rawReadDir="${workspaceDir}/raw_reads"
 fastpDir="${workspaceDir}/fastp_trim"
 fastqcDir="${workspaceDir}/fastqc"
 spadesDir="${workspaceDir}/spades"
-mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir}
+prodigalDir="${workspaceDir}/prodigal"
+mkdir ${rawReadDir} ${fastpDir} ${fastqcDir} ${spadesDir} ${prodigalDir}
 
 
 
@@ -147,3 +149,17 @@ spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 40 -m 100
 # 	done
 
 # done
+
+
+
+
+######################
+### PART 4: ANNOTATION 
+######################
+
+cd ${spadesDir}
+
+prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
+
+mv out* ${prodigalDir}/
+
