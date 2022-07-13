@@ -22,6 +22,7 @@ module load sratoolkit
 module load bowtie2
 module load prodigal
 module load prokka 
+module load eggnogmapper
 
 
 ###########################
@@ -158,12 +159,12 @@ spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 40 -m 100
 ### PART 4: ANNOTATION 
 ######################
 
-#prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
+
 
 
 cd ${spadesDir}
+prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
 
-prokka --outdir prokkaDir --prefix mygenome contigs.fasta
-
+#prokka --outdir prokkaDir --prefix mygenome contigs.fasta
 #mv out* ${prokkaDir}/
 
