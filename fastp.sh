@@ -37,6 +37,6 @@ done
 conda deactivate
 
 # Make directory and move output files
-mkdir ${fastpDir}
-mv out* ${fastpDir}/
-mv fastp.html fastp.json ${fastpDir}/
+#mkdir ${fastpDir}
+#mv out* ${fastpDir}/
+#mv fastp.html fastp.json ${fastpDir}/
