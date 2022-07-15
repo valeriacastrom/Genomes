@@ -1,7 +1,10 @@
 # This file sets up variables for the workspaces of each tool, sourced by each file for the identifier 
 
 # Workspace identification
+
+#MODIFY THIS LINE
 identifier="run1" # CHANGE TO UNIQUE IDENTIFIER EACH TIME
+
 workspaceDir="../workspaces/${identifier}"
 
 # Create the workspace directory
