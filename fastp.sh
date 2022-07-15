@@ -18,13 +18,13 @@ source config.sh
 # fastp -i ../raw_data/NCH0002R-M_S10_L001_R1_001.fastq.gz -I ../raw_data/NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
 
 # Iterate through all files
-#for i in $(ls ../raw_data/dummy_files/*_R1_001.fastq.gz) # Iterate through R1
-for i in $(ls ~/Desktop/dummy_files/*_R1_001.fastq.gz)
+for i in $(ls ../raw_data/dummy_files/*_R1_001.fastq.gz) # Iterate through R1
+#for i in $(ls ~/Desktop/dummy_files/*_R1_001.fastq.gz)
 do
     i_basename=$(basename $i) # save
 	i_sub="${i_basename%%_*}" # Identifier (characters before underscore)
-	#for j in $(ls ../raw_data/dummy_files/*_R2_001.fastq.gz) # Iterate through R2
-    for i in $(ls ~/Desktop/dummy_files/*_R2_001.fastq.gz)
+	for j in $(ls ../raw_data/dummy_files/*_R2_001.fastq.gz) # Iterate through R2
+    #for i in $(ls ~/Desktop/dummy_files/*_R2_001.fastq.gz)
 	do
 		j_basename=$(basename $j) # save
 	    j_sub="${j_basename%%_*}" # Identifier (characters before underscore)
