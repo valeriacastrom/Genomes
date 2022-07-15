@@ -13,11 +13,11 @@
 
 #Load modules
 module purge all
+
 module load anaconda3
 module load fastqc
 module load multiqc
 module load spades
-
 module load prodigal
 module load prokka 
 module load eggnogmapper
