@@ -1,11 +1,11 @@
 #!/bin/bash
 
-#SBATCH --account vcc4348
+#SBATCH --account aDDLATER allocation requested
 #SBATCH --partition normal
 #SBATCH --nodes=1
-#SABTCH --ntasks-per-node=12
-#SBATCH --time=24:00:00
-#SBATCH --mem-per-cpu=10gb
+#SABTCH --ntasks-per-node=20
+#SBATCH --time=40:00:00
+#SBATCH --mem=100gb
 #SBATCH --job-name="gen_assembly"
 
 # This script downloads Mehreen's genomes (parental and infantile orgin), trims the paired reads, performs quality control,
@@ -18,8 +18,6 @@ module load fastqc
 module load multiqc
 module load spades
 
-module load sratoolkit
-module load bowtie2
 module load prodigal
 module load prokka 
 module load eggnogmapper
@@ -81,7 +79,7 @@ conda activate paired_read
 
 # one file
 fastp -i NCH0002R-M_S10_L001_R1_001.fastq.gz -I NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
-
+# FIX: MATCH IDENTIFIERS
 # all files
 # for i in $(ls *_1.fastq.gz) # Iterate through R1
 # do
@@ -91,7 +89,7 @@ fastp -i NCH0002R-M_S10_L001_R1_001.fastq.gz -I NCH0002R-M_S10_L001_R2_001.fastq
 # 		j_sub=$(echo $j | cut -c1-10)
 # 		if [[ $i_sub == $j_sub ]] # Match reads via accession
 # 		then
-# 			fastp -i ${i} -I ${j} --out1 ${i_sub}_fastp_out.R1.fq.gz --out2 ${j_sub}_fastp_out.R2.fq.gz --detect_adapter_for_pe --thread 16 --length_required 50
+# 			fastp -i ${i} -I ${j} --out1 ${i_sub}_fastp_out.R1.fastq.gz --out2 ${j_sub}_fastp_out.R2.fastq.gz --detect_adapter_for_pe --thread 16 --length_required 50
 
 # 		fi
 
@@ -107,13 +105,13 @@ mv fastp.html fastp.json ${fastpDir}/
 
 
 ######################
-### PART 3: FASTQC ###
+### PART 4: FASTQC ###
 ######################
 
 cd ${fastpDir}/
 
 # FASTQC analysis
-fastqc -t 12 *q.gz
+fastqc -t 12 *fastq.gz
 
 # To move FastQC output into new directory
 mv *fastqc.html ${fastqcDir}
@@ -127,14 +125,15 @@ cd ${workspaceDir}
 
 
 ######################
-### PART 3: SPADES ###
+### PART 5: SPADES ###
 ######################
 
 cd ${fastpDir}
 
 # for one file
-spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 40 -m 100
+spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 20 -m 100
 
+#FIX: IDENTIFIER
 # for all files
 # for i in $(ls *fastp_out.R1.fq.gz) # Iterate through R1
 # do
@@ -156,7 +155,7 @@ spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 40 -m 100
 
 
 ######################
-### PART 4: ANNOTATION 
+### PART 6: ANNOTATION 
 ######################
 
 
