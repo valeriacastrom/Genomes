@@ -8,18 +8,11 @@
 #SBATCH --mem=100gb
 #SBATCH --job-name="fastp_gen_assembly"
 
-# Workspace identifier
-timestamp=$(date +%d%m%Y_%H%M)
-identifer="genome"
-workspace="../workspaces/${identifier}_${timestamp}"
-
-# Load modules
+# Setup
 module purge all
 module load anaconda3
-
-# Activate environment
 source activate paired_read
-
+source config.sh
 
 # One file
 fastp -i ../raw_data/NCH0002R-M_S10_L001_R1_001.fastq.gz -I ../raw_data/NCH0002R-M_S10_L001_R2_001.fastq.gz -o out1.fastq.gz -O out2.fastq.gz
@@ -42,6 +35,7 @@ fastp -i ../raw_data/NCH0002R-M_S10_L001_R1_001.fastq.gz -I ../raw_data/NCH0002R
 # Deactivate conda
 conda deactivate
 
-# Move outputs
-mv out* ${workspace}/fastp
-mv fastp.html fastp.json ${workspace}/fastp
+# Make directory and move output files
+mkdir ${fastpDir}
+mv out* ${fastpDir}/
+mv fastp.html fastp.json ${fastpDir}/

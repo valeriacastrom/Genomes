@@ -8,25 +8,21 @@
 #SBATCH --mem=100gb
 #SBATCH --job-name="fastqc_gen_assembly"
 
-# Workspace identifier
-timestamp=$(date +%d%m%Y_%H%M)
-identifer="genome"
-workspace="../workspaces/${identifier}_${timestamp}"
-
-# Load modules
+# Setup
 module purge all
 module load anaconda3
 module load fastqc
 module load multiqc
+source activate paired_read
+source config.sh
 
 # FASTQC analysis
-fastqc -t 12 "${workspace}/fastq/*fastq.gz"
+fastqc -t 12 $fastpDir/*fastq.gz #NOT WORKING MAYBE
 
 # To move FastQC output into new directory
-mv *fastqc.html "../workspace"
-mv *fastqc.zip "${workspace}/fastqc"
+mkdir ${fastqcDir}
+mv *fastqc.html ${fastqcDir}
+mv *fastqc.zip ${fastqcDir}
 
 # MultiQC analysis
-cd ${fastqcDir}
-multiqc "${workspace}/fastqc"
-cd ${workspaceDir}
+multiqc ${fastqcDir} #NOT WORKING MAYBE
