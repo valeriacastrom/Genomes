@@ -29,7 +29,8 @@ do
 	    j_sub="${j_basename%%_*}" # Identifier (characters before underscore)
 		if [[ $i_sub == $j_sub ]] # Match reads via accession
 		then
-			spades.py -1 ${i} -2 ${j} -o ${spadesDir} -t 40 -m 100
+            mkdir ${spadesDir}/${i_sub}
+			spades.py -1 ${i} -2 ${j} -o ${spadesDir}/${i_sub} -t 40 -m 100
 		fi
 
 	done
