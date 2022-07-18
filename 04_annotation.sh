@@ -8,16 +8,16 @@
 #SBATCH --mem=100gb
 #SBATCH --job-name="annotation_gen_assembly"
 
-# Set up
+#Setup
 module purge all
 module load anaconda3
 source config.sh
 
-#prodigal
+#Prodigal
 cd ${spadesDir}
 prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
 
-#egg-nog
+#Egg-nog
 find_in_conda_env(){
     conda env list | grep "${@}" >/dev/null 2>/dev/null
 }
