@@ -160,7 +160,7 @@ spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 20 -m 100
 
 
 
-
+module load prodigal
 cd ${spadesDir}
 prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
 
