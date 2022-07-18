@@ -14,9 +14,7 @@ module load anaconda3
 source config.sh
 
 #Prodigal
-cd ${spadesDir}
-
-
+mkdir ${prodigalDir}
 
 prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
 
@@ -24,4 +22,3 @@ prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
 #Moves to prodigal directory
 mv out.gene* ${prodigalDir}/
 mv out.protein* ${prodigalDir}/
-mv egg_nog* ${prodigalDir}
