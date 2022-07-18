@@ -15,7 +15,8 @@ source config.sh
 
 #Prodigal
 cd ${spadesDir}
-prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
+#WHATEVER THIS IS NAMED
+prodigal -i scaffolds.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
 
 #Egg-nog
 find_in_conda_env(){
