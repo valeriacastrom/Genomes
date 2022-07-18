@@ -15,10 +15,11 @@ source config.sh
 
 #Prodigal
 mkdir ${prodigalDir}
-
-prodigal -i contigs.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
-
-
-#Moves to prodigal directory
-mv out.gene* ${prodigalDir}/
-mv out.protein* ${prodigalDir}/
+for directory in ${spadesDir}/*/;
+do
+    mkdir ${prodigalDir}/${directory}
+    prodigal -i scaffolds.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
+    mv out.gene* ${prodigalDir}/${directory} #Moves to prodigal directory
+    mv out.protein* ${prodigalDir}/${directory}
+    
+done
