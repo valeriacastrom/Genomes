@@ -3,7 +3,7 @@
 # Workspace identification
 
 #MODIFY THIS LINE
-identifier="run1" # CHANGE TO UNIQUE IDENTIFIER EACH TIME
+identifier="run2" # CHANGE TO UNIQUE IDENTIFIER EACH TIME
 
 workspaceDir="../workspaces/${identifier}"
 
