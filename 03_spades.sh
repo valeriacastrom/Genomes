@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --account aDDLATER allocation requested
+#SBATCH --account p31752
 #SBATCH --partition normal
 #SBATCH --nodes=1
 #SABTCH --ntasks-per-node=20
