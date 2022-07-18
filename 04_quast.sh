@@ -12,14 +12,17 @@
 module purge all
 module load anaconda3
 source config.sh
+source activate quast
 
-#Prodigal
-mkdir ${prodigalDir}
+#Make quast directory
+mkdir ${quastDir}
+
+#Run Quast
 for directory in ${spadesDir}/*/;
 do
-    mkdir ${prodigalDir}/${directory}
-    prodigal -i scaffolds.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
-    mv out.gene* ${prodigalDir}/${directory} #Moves to prodigal directory
-    mv out.protein* ${prodigalDir}/${directory}
-    
+    mkdir ${quastDir}/${directory}
+    quast.py --threads 12 ${directory}/scaffolds.fasta -o ${quastDir}/${directory}
 done
+
+# Deactivate conda
+source deactivate
