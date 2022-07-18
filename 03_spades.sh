@@ -19,19 +19,24 @@ source config.sh
 spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 20 -m 100
 
 #FIX: IDENTIFIER
-# for all files
-# for i in $(ls *fastp_out.R1.fq.gz) # Iterate through R1
-# do
-# 	i_sub=$(echo $i | cut -c1-10) # SRR accession number
-# 	for j in $(ls *fastp_out.R2.fq.gz) # Iterate R2
-# 	do
-# 		j_sub=$(echo $j | cut -c1-10)
-# 		if [[ $i_sub == $j_sub ]] # Match reads via accession
-# 		then
-# 			spades.py -1 ${i} -2 ${j} -o ${spadesDir} -t 40 -m 100
+#for all files
+for i in $(ls ${fastpDir}/*_fastp_out.R1.fastq.gz) # Iterate through R1
+do
+	i_basename=$(basename $i) # Save basename
+	i_sub="${i_basename%%_*}" # Identifier (characters before underscore)
+	for j in $(ls ${fastpDir}/*_fastp_out.R2.fastq.gz) # Iterate through R2
+	do
+		j_basename=$(basename $j) # Save basename
+	    j_sub="${j_basename%%_*}" # Identifier (characters before underscore)
+		if [[ $i_sub == $j_sub ]] # Match reads via accession
+		then
+			spades.py -1 ${i} -2 ${j} -o ${spadesDir} -t 40 -m 100
 
-# 		fi
+		fi
 
-# 	done
+	done
 
-# done
+done
+
+# Deactivate conda
+source deactivate

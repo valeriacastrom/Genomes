@@ -26,3 +26,6 @@ mv *fastqc.zip ${fastqcDir}
 
 # MultiQC analysis
 multiqc ${fastqcDir}
+
+# Deactivate conda
+source deactivate
