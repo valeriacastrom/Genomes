@@ -15,6 +15,9 @@ module load spades
 source activate paired_read
 source config.sh
 
+#Make the spades directory
+mkdir ${spadesDir}
+
 # SPADES analysis
 for i in $(ls ${fastpDir}/*_fastp_out.R1.fastq.gz) # Iterate through R1
 do
