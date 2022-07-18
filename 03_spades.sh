@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --account aDDLATER allocation requested
+#SBATCH --account p31752
 #SBATCH --partition normal
 #SBATCH --nodes=1
 #SABTCH --ntasks-per-node=20
@@ -15,11 +15,10 @@ module load spades
 source activate paired_read
 source config.sh
 
-# for one file
-spades.py -1 out1.fastq.gz -2 out2.fastq.gz -o ${spadesDir} -t 20 -m 100
+#Make the spades directory
+mkdir ${spadesDir}
 
-#FIX: IDENTIFIER
-#for all files
+# SPADES analysis
 for i in $(ls ${fastpDir}/*_fastp_out.R1.fastq.gz) # Iterate through R1
 do
 	i_basename=$(basename $i) # Save basename
@@ -30,8 +29,8 @@ do
 	    j_sub="${j_basename%%_*}" # Identifier (characters before underscore)
 		if [[ $i_sub == $j_sub ]] # Match reads via accession
 		then
-			spades.py -1 ${i} -2 ${j} -o ${spadesDir} -t 40 -m 100
-
+            mkdir ${spadesDir}/${i_sub}
+			spades.py -1 ${i} -2 ${j} -o ${spadesDir}/${i_sub} -t 40 -m 100
 		fi
 
 	done

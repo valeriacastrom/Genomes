@@ -14,7 +14,7 @@ module load anaconda3
 source activate paired_read
 source config.sh
 
-# Iterate through all files
+# FastP Analysis
 for i in $(ls ../raw_data/*_R1_001.fastq.gz) # Iterate through R1
 do
     i_basename=$(basename $i) # Save basename

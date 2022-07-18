@@ -17,14 +17,17 @@ source activate paired_read
 source config.sh
 
 # FASTQC analysis
-#fastqc -t 12 ${fastpDir}/*fastq.gz
+fastqc -t 12 ${fastpDir}/*fastq.gz
 
-# To move FastQC output into new directory
-#mkdir ${fastqcDir}
-#mv ${fastpDir}/*fastqc.* ${fastqcDir}
+# Move FastQC output into fastqcDir
+mkdir ${fastqcDir}
+mv ${fastpDir}/*fastqc.* ${fastqcDir}
 
 # MultiQC analysis
 multiqc ${fastqcDir}
+
+# Move MultiQC output into fastqcDir
+mv multiqc* ${fastqcDir}
 
 # Deactivate conda
 source deactivate

@@ -11,7 +11,6 @@
 #Setup
 module purge all
 module load anaconda3
-module load prodigal
 source config.sh
 
 #Prodigal
