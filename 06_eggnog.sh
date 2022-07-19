@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --account b1042
-#SBATCH --partition genomics
+#SBATCH --account p31752
+#SBATCH --partition normal
 #SBATCH --nodes=1
 #SABTCH --ntasks-per-node=20
 #SBATCH --time=40:00:00
@@ -17,10 +17,9 @@ source activate annotation
 
 
 #Egg-nog
-find_in_conda_env(){
-    conda env list | grep "${@}" >/dev/null 2>/dev/null
-}
-
+#find_in_conda_env(){
+#    conda env list | grep "${@}" >/dev/null 2>/dev/null
+#
 #check if diamond is installed in the 
 #if find_in_conda_env "diamond" ; then
 #    source activate diamond
