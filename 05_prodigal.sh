@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH --A b1042
+#SBATCH -A b1042
 #SBATCH -p genomics
 #SBATCH --nodes=1
 #SABTCH --ntasks-per-node=20
