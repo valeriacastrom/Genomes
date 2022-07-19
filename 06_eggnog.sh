@@ -17,10 +17,9 @@ source activate annotation
 
 
 #Egg-nog
-find_in_conda_env(){
-    conda env list | grep "${@}" >/dev/null 2>/dev/null
-}
-
+#find_in_conda_env(){
+#    conda env list | grep "${@}" >/dev/null 2>/dev/null
+#
 #check if diamond is installed in the 
 #if find_in_conda_env "diamond" ; then
 #    source activate diamond
