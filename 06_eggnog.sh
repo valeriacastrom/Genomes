@@ -31,7 +31,7 @@ source activate annotation
 
 
 
-#Prodigal
+#Eggnog
 mkdir ${eggnogDir}
 for directory in ${prodigalDir}/*/;
 do
@@ -45,6 +45,6 @@ do
     
 done
 
-#deactivate the conda environment containing diamond
+#Deactivate the conda environment containing diamond
 source deactivate
 
