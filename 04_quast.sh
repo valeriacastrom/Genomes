@@ -18,10 +18,11 @@ source activate quast
 mkdir ${quastDir}
 
 #Run Quast
-for directory in ${spadesDir}/*/;
+for directory in ${spadesDir}/*/
 do
-    mkdir ${quastDir}/${directory}
-    quast.py --threads 12 ${directory}/scaffolds.fasta -o ${quastDir}/${directory}
+    d_sub=$(basename $directory)
+    mkdir ${quastDir}/${d_sub}
+    quast.py --threads 12 ${directory}/scaffolds.fasta -o ${quastDir}/${d_sub}
 done
 
 # Deactivate conda
