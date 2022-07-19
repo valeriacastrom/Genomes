@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#SBATCH --account aDDLATER allocation requested
-#SBATCH --partition normal
+#SBATCH --account b1042
+#SBATCH --partition genomics
 #SBATCH --nodes=1
 #SABTCH --ntasks-per-node=20
 #SBATCH --time=40:00:00
 #SBATCH --mem=100gb
-#SBATCH --job-name="annotation_gen_assembly"
+#SBATCH --job-name="spades_gen_assembly"
 
 #Setup
 module purge all
