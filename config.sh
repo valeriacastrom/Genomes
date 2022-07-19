@@ -1,3 +1,4 @@
+#!/bin/bash
 # This file sets up variables for the workspaces of each tool, sourced by each file for the identifier 
 
 # Workspace identification
