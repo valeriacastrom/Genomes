@@ -41,16 +41,10 @@ do
     #run emapper.py with all of the .faa files from prodigal
     emapper.py -i ${directory}/out.protein.translations.faa -o egg_nog -m diamond --cpu 20
 
-    mv out.gene* ${prodigalDir}/${directory} #Moves to prodigal directory
-    mv out.protein* ${prodigalDir}/${directory}
+    mv egg_nog* ${eggnogDir}/${directory} #Moves to prodigal directory
+    
     
 done
-
-# Deactivate conda
-source deactivate
-
-
-
 
 
 
