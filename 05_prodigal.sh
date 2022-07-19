@@ -19,11 +19,11 @@ source config.sh
 mkdir ${prodigalDir}
 for directory in ${spadesDir}/*/;
 do
-    mkdir ${prodigalDir}/${directory}
+    d_sub=$(basename $directory)
+    mkdir ${prodigalDir}/${d_sub}
     prodigal -i ${directory}/scaffolds.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
-    mv out.gene* ${prodigalDir}/${directory} #Moves to prodigal directory
-    mv out.protein* ${prodigalDir}/${directory}
-    
+    mv out.gene* ${prodigalDir}/${d_sub} #Moves to prodigal directory
+    mv out.protein* ${prodigalDir}/${d_sub}
 done
 
 # Deactivate conda
