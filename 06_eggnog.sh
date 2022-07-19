@@ -36,21 +36,16 @@ find_in_conda_env(){
 mkdir ${eggnogDir}
 for directory in ${prodigalDir}/*/;
 do
-    mkdir ${eggnogDir}/${directory}
     
+    d_sub=$(basename $directory)
+    mkdir ${eggnogDir}/${d_sub}
     #run emapper.py with all of the .faa files from prodigal
     emapper.py -i ${directory}/out.protein.translations.faa -o egg_nog -m diamond --cpu 20
-
-    mv egg_nog* ${eggnogDir}/${directory} #Moves to prodigal directory
+    mv egg_nog* ${eggnogDir}/${d_sub} #Moves to eggnog directory
     
     
 done
 
-
-
-
 #deactivate the conda environment containing diamond
 source deactivate
 
-#Moves to prodigal directory
-mv egg_nog* ${prodigalDir}
