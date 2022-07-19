@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#SBATCH --account p31752
-#SBATCH --partition normal
+#SBATCH --A b1042
+#SBATCH -p genomics
 #SBATCH --nodes=1
 #SABTCH --ntasks-per-node=20
 #SBATCH --time=04:00:00
