@@ -13,7 +13,7 @@
 module purge all
 module load anaconda3
 source activate phylophlan 
-source /projects/b1042/HartmannLab/genomes-for-mehreen/AVG/Genomes/config.sh
+source config.sh
 
 mkdir ${phylophlanDir}
 
@@ -27,7 +27,7 @@ done
 
 
 
-phylophlan -i <input_folder> \
-    -d <database> \
-    --diversity <low-medium-high> \
+phylophlan -i ${phylophlanDir} \
+    -d phylophlan \
+    --diversity low \
     -f <configuration_file>
