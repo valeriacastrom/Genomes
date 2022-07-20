@@ -1,12 +1,15 @@
 #!/bin/bash
-# This file sets up variables for the workspaces of each tool, sourced by each file for the identifier 
 
-# Workspace identification
+# This file sets up variables for the workspaces of each tool, 
+# sourced by each file for the identifier 
 
-#MODIFY THIS LINE
-identifier="run2" # CHANGE TO UNIQUE IDENTIFIER EACH TIME
 
-workspaceDir="../workspaces/${identifier}"
+
+#MODIFY THESE LINES
+rawReadsDir="../raw_data" # CHANGE TO PATH OF FOLDER CONTAINING RAW DATA
+workspaceDir="../workspaces/run2" # CHANGE TO WHERE THE OUTPUT FILES SHOULD GO
+
+
 
 # Create the workspace directory
 if [ ! -d "${workspaceDir}" ]
@@ -15,7 +18,6 @@ then
 fi
 
 # Setup variables
-rawReadDir="${workspaceDir}/raw_reads"
 fastpDir="${workspaceDir}/fastp_trim"
 fastqcDir="${workspaceDir}/fastqc"
 spadesDir="${workspaceDir}/spades"

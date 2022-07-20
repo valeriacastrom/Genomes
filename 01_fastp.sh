@@ -15,11 +15,11 @@ source activate paired_read
 source config.sh
 
 # FastP Analysis
-for i in $(ls ../raw_data/*_R1_001.fastq.gz) # Iterate through R1
+for i in $(ls ${rawReadsDir}/*_R1_001.fastq.gz) # Iterate through R1
 do
     i_basename=$(basename $i) # Save basename
 	i_sub="${i_basename%%_*}" # Identifier (characters before underscore)
-	for j in $(ls ../raw_data/*_R2_001.fastq.gz) # Iterate through R2
+	for j in $(ls ${rawReadsDir}/*_R2_001.fastq.gz) # Iterate through R2
 	do
 		j_basename=$(basename $j) # Save basename
 	    j_sub="${j_basename%%_*}" # Identifier (characters before underscore)
