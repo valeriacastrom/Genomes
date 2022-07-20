@@ -10,3 +10,10 @@
 #SBATCH --mail-type=all
 #SBATCH --mail-user=andrewwatson2025@u.northwestern.edu
 
+
+
+
+phylophlan -i <input_folder> \
+    -d <database> \
+    --diversity <low-medium-high> \
+    -f <configuration_file>
