@@ -10,6 +10,20 @@
 #SBATCH --mail-type=all
 #SBATCH --mail-user=andrewwatson2025@u.northwestern.edu
 
+module purge all
+module load anaconda3
+source activate phylophlan 
+source /projects/b1042/HartmannLab/genomes-for-mehreen/AVG/Genomes/config.sh
+
+mkdir ${phylophlanDir}
+
+for directory in ${prodigalDir}/*/;
+do
+    
+    d_sub=$(basename $directory)
+    cp ${directory}/out.protein.translations.faa ${phylophlanDir}/${d_sub}
+    mv egg_nog* ${eggnogDir}/${d_sub} #Moves to eggnog directory
+done
 
 
 
