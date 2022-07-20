@@ -6,7 +6,7 @@
 #SABTCH --ntasks-per-node=20
 #SBATCH --time=04:00:00
 #SBATCH --mem=100gb
-#SBATCH --job-name="prodigal_gen_assembly"
+#SBATCH --job-name="phylophlan_gen_assembly"
 #SBATCH --mail-type=all
 #SBATCH --mail-user=andrewwatson2025@u.northwestern.edu
 
