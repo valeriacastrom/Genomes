@@ -19,7 +19,6 @@ mkdir ${phylophlanDir}
 
 for directory in ${prodigalDir}/*/;
 do
-    
     d_sub=$(basename $directory)
     cp ${directory}/out.protein.translations.faa ${phylophlanDir}/${d_sub}
     mv egg_nog* ${eggnogDir}/${d_sub} #Moves to eggnog directory
@@ -27,7 +26,4 @@ done
 
 
 
-phylophlan -i ${phylophlanDir} \
-    -d phylophlan \
-    --diversity low \
-    -f <configuration_file>
+phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f supertree_aa.cfg
