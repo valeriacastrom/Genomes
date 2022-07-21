@@ -20,7 +20,10 @@ mkdir ${phylophlanDir}
 for directory in ${prodigalDir}/*/;
 do
     d_sub=$(basename $directory)
-    cp ${directory}/out.protein.translations.faa ${phylophlanDir}/${d_sub}
+
+    cp ${directory}/out.protein.translations.faa ${phylophlanDir}
+    mv ${phylophlanDir}/out.protein.translations.faa ${d_sub}.faa
+
     mv egg_nog* ${eggnogDir}/${d_sub} #Moves to eggnog directory
 done
 
