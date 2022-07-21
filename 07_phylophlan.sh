@@ -28,7 +28,7 @@ done
 
 
 
-#phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f supertree_aa.cfg
+phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f Resources/supertree_aa.cfg
 
 
 source deactivate
