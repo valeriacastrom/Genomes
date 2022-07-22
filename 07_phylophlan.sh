@@ -26,7 +26,7 @@ do
 done
 
 
-phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f Resources/supertree_aa.cfg
+phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f Resources/supertree_aa.cfg -o ${phylophlanDir} 
 mv phylophlan_databases ${phylophlanDir}
 mv phylophlan_phylophlan ${phylophlanDir}
 
