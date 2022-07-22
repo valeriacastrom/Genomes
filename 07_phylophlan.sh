@@ -4,7 +4,7 @@
 #SBATCH --partition normal
 #SBATCH --nodes=1
 #SABTCH --ntasks-per-node=20
-#SBATCH --time=04:00:00
+#SBATCH --time=40:00:00
 #SBATCH --mem=100gb
 #SBATCH --job-name="phylophlan_gen_assembly"
 #SBATCH --mail-type=all
@@ -26,7 +26,7 @@ do
 done
 
 
-phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f supertree_aa.cfg
+phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f Resources/supertree_aa.cfg
 mv phylophlan_databases ${phylophlanDir}
 mv phylophlan_phylophlan ${phylophlanDir}
 
