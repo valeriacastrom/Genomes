@@ -12,3 +12,5 @@
 
 module load gtdbtk
 
+mkdir ${gtdbtkDir}
+
