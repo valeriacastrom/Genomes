@@ -26,7 +26,7 @@ do
 done
 
 
-phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f Resources/supermatrix_aa.cfg -o ${phylophlanDir} 
+phylophlan -i ${phylophlanDir} -d phylophlan --diversity low -f Resources/supermatrix_aa.cfg -o ${phylophlanDir} --nproc 20
 mv phylophlan_databases ${phylophlanDir}
 mv phylophlan_phylophlan ${phylophlanDir}
 
