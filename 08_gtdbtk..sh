@@ -13,12 +13,14 @@
 module load gtdbtk
 
 mkdir ${gtdbtkDir}
+mkdir ${gtdbtkDir}/scaffolds
 
 
 for directory in ${spadesDir}/*/;
 do
-    cp ${directory}/out.protein.translations.faa ${gtdbtkDir}
+    cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds
     
 done
 
-gtdbtk  --genome_dir Bins --out_dir gtdbtk_results --extension fasta --cpus 3
+
+gtdbtk identify  --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 3
