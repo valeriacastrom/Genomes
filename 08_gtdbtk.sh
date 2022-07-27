@@ -11,6 +11,7 @@
 #SBATCH --mail-user=andrewwatson2025@u.northwestern.edu
 
 module load gtdbtk
+source config.sh
 
 mkdir ${gtdbtkDir}
 mkdir ${gtdbtkDir}/scaffolds
