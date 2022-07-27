@@ -18,9 +18,11 @@ mkdir ${gtdbtkDir}/scaffolds
 
 for directory in ${spadesDir}/*/;
 do
+    d_sub=$(basename $directory)
     cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds
-    
+    mv ${gtdbtkDir}/scaffolds/scaffolds* ${gtdbtkDir}/scaffolds/${d_sub}.fasta
+
 done
 
 
-gtdbtk identify  --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 3
+#gtdbtk identify  --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 3
