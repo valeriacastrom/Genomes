@@ -12,6 +12,7 @@
 
 module load gtdbtk
 source config.sh
+module load prodigal 
 
 mkdir ${gtdbtkDir}
 mkdir ${gtdbtkDir}/scaffolds
