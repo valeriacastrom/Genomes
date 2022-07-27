@@ -14,3 +14,13 @@ module load gtdbtk
 
 mkdir ${gtdbtkDir}
 
+for directory in ${spadesDir}/*/;
+do
+    d_sub=$(basename $directory)
+    mkdir ${gtdbtkDir}/${d_sub}
+    prodigal -i ${directory}/scaffolds.fasta -o out.gene.coords.gbk -a out.protein.translations.faa
+    mv out.gene* ${prodigalDir}/${d_sub} #Moves to prodigal directory
+    mv out.protein* ${prodigalDir}/${d_sub}
+done
+
+
