@@ -12,8 +12,9 @@
 
 # Setup
 module purge all
-module load gtdbtk
+#module load gtdbtk
 source config.sh
+source activate gtdbtk
 module load prodigal 
 
 # Make gtdbtk directories
@@ -31,3 +32,6 @@ done
 
 # Run gtdbtk
 gtdbtk identify  --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 20
+
+# Deactivate conda
+source deactivate
