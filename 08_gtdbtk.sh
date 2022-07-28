@@ -12,7 +12,7 @@
 
 # Setup
 module purge all
-#module load gtdbtk
+module load gtdbtk
 source config.sh
 source activate gtdbtk
 module load prodigal 
