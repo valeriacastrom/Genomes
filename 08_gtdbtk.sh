@@ -10,22 +10,24 @@
 #SBATCH --mail-type=all
 #SBATCH --mail-user=andrewwatson2025@u.northwestern.edu
 
+# Setup
 module purge all
 module load gtdbtk
 source config.sh
 module load prodigal 
 
+# Make gtdbtk directories
 mkdir ${gtdbtkDir}
 mkdir ${gtdbtkDir}/scaffolds
 
-
+# Setup directories
 for directory in ${spadesDir}/*/;
 do
-    d_sub=$(basename $directory)
-    cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds
+    d_sub=$(basename $directory) # Save basename
+    cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds # copy fasta
     mv ${gtdbtkDir}/scaffolds/scaffolds* ${gtdbtkDir}/scaffolds/${d_sub}.fasta
 
 done
 
-
+# Run gtdbtk
 gtdbtk identify  --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 20

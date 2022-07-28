@@ -8,21 +8,21 @@
 #SBATCH --mem=100gb
 #SBATCH --job-name="quast_gen_assembly"
 
-#Setup
+# Setup
 module purge all
 module load anaconda3
 source config.sh
 source activate quast
 
-#Make quast directory
+# Make quast directory
 mkdir ${quastDir}
 
-#Run Quast
+# Run Quast
 for directory in ${spadesDir}/*/
 do
-    d_sub=$(basename $directory)
-    mkdir ${quastDir}/${d_sub}
-    quast.py --threads 12 ${directory}/scaffolds.fasta -o ${quastDir}/${d_sub}
+    d_sub=$(basename $directory) # Save Basename
+    mkdir ${quastDir}/${d_sub} # Make new directory 
+    quast.py --threads 12 ${directory}/scaffolds.fasta -o ${quastDir}/${d_sub} # Run quast
 done
 
 # Deactivate conda

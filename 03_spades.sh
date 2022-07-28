@@ -15,7 +15,7 @@ module load spades
 source activate paired_read
 source config.sh
 
-#Make the spades directory
+# Make the spades directory
 mkdir ${spadesDir}
 
 # SPADES analysis
@@ -32,9 +32,7 @@ do
             mkdir ${spadesDir}/${i_sub}
 			spades.py -1 ${i} -2 ${j} -o ${spadesDir}/${i_sub} -t 40 -m 100
 		fi
-
 	done
-
 done
 
 # Deactivate conda
