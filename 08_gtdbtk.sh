@@ -18,20 +18,20 @@ source activate gtdbtk
 module load prodigal 
 
 # Make gtdbtk directories
-mkdir ${gtdbtkDir}
-mkdir ${gtdbtkDir}/scaffolds
+mkdir ${gtdbtkDir2}
+mkdir ${$gtdbtkDir2}/scaffolds
 
 # Setup directories
 for directory in ${spadesDir}/*/;
 do
     d_sub=$(basename $directory) # Save basename
-    cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds # copy fasta
-    mv ${gtdbtkDir}/scaffolds/scaffolds* ${gtdbtkDir}/scaffolds/${d_sub}.fasta
+    cp ${directory}/scaffolds.fasta ${gtdbtkDir2}/scaffolds # copy fasta
+    mv ${gtdbtkDir2}/scaffolds/scaffolds* ${gtdbtkDir2}/scaffolds/${d_sub}.fasta
 
 done
 
 # Run gtdbtk
-gtdbtk identify  --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 20
+gtdbtk identify  --genome_dir  ${gtdbtkDir2}/scaffolds  --out_dir ${gtdbtkDir2} --extension fasta --cpus 20
 
 # Deactivate conda
 source deactivate
