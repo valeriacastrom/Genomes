@@ -10,6 +10,7 @@
 #SBATCH --mail-type=all
 #SBATCH --mail-user=andrewwatson2025@u.northwestern.edu
 
+module purge all
 module load gtdbtk
 source config.sh
 module load prodigal 
