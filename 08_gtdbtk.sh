@@ -13,9 +13,9 @@
 # Setup
 module purge all
 module load gtdbtk
-source config.sh
 module load anaconda3
-source activate gtdbtk
+source config.sh
+#source activate gtdbtk
 module load prodigal 
 
 # Make gtdbtk directories
@@ -31,7 +31,7 @@ do
 done
 
 # Run gtdbtk
-#gtdbtk classify_wf --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 20
+gtdbtk classify_wf --genome_dir ${gtdbtkDir}/scaffolds --out_dir ${gtdbtkDir} --extension fasta --cpus 20
 
 # Deactivate conda
-conda deactivate
+#conda deactivate
