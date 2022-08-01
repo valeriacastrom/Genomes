@@ -23,13 +23,13 @@ mkdir ${gtdbtkDir}
 mkdir ${$gtdbtkDir}/scaffolds
 
 # Setup directories
-for directory in ${spadesDir}/*/;
-do
-    d_sub=$(basename $directory) # Save basename
-    cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds # copy fasta
-    mv ${gtdbtkDir}/scaffolds/scaffolds.fasta ${gtdbtkDir}/scaffolds/${d_sub}.fasta
-    break
-done
+# for directory in ${spadesDir}/*/;
+# do
+#     d_sub=$(basename $directory) # Save basename
+#     cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds # copy fasta
+#     mv ${gtdbtkDir}/scaffolds/scaffolds.fasta ${gtdbtkDir}/scaffolds/${d_sub}.fasta
+#     break
+# done
 
 # Run gtdbtk
 #gtdbtk classify_wf --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 20
