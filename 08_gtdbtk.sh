@@ -27,7 +27,7 @@ for directory in ${spadesDir}/*/;
 do
     d_sub=$(basename $directory) # Save basename
     cp ${directory}/scaffolds.fasta ${gtdbtkDir}/scaffolds # copy fasta
-    mv ${gtdbtkDir}/scaffolds/scaffolds.fasta ${gtdbtkDir}/scaffolds/${d_sub}.fasta
+    mv ${gtdbtkDir}/scaffolds/scaffolds.fasta "${gtdbtkDir}/scaffolds/${d_sub}.fasta"
 
 done
 
