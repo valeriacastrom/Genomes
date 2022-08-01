@@ -35,4 +35,4 @@ done
 gtdbtk classify_wf --genome_dir  ${gtdbtkDir}/scaffolds  --out_dir ${gtdbtkDir} --extension fasta --cpus 20
 
 # Deactivate conda
-source deactivate
+conda deactivate
