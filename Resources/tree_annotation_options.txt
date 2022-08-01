@@ -1,0 +1,50 @@
+total_plotted_degrees	360
+start_rotation	0
+title	ESBL-E Sample Phylogeny
+title_font_size	16
+clade_separation	0.25
+Enterobacter
+Enterobacter
+Enterobacter
+Escherichia
+Enterobacter
+Enterobacter
+Escherichia
+Enterobacter
+Escherichia
+Enterobacter
+Escherichia
+Escherichia
+Escherichia
+Escherichia
+Escherichia
+Escherichia
+Escherichia
+Escherichia
+Escherichia
+Enterobacter
+Klebsiella
+Citrobacter
+Citrobacter
+Citrobacter
+Escherichia
+Escherichia
+Enterobacter
+Escherichia
+Achromobacter
+Escherichia
+Escherichia
+Escherichia
+Enterobacter
+Klebsiella
+Citrobacter
+Citrobacter
+Klebsiella
+Citrobacter
+Citrobacter
+Enterobacter
+Pseudonomas
+Pseudonomas
+Pseudonomas
+Escherichia
+Proteus
