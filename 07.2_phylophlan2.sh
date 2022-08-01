@@ -30,3 +30,7 @@ done
 ##STEP 2    
 
 #./download_files.sh sequence_url_opendata_19436.txt input_bins
+
+
+
+phylophlan_get_reference.py -g f__Enterobacteriaceae -o input_bins -e .faa 
