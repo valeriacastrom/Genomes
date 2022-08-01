@@ -14,8 +14,8 @@
 module purge all
 module load gtdbtk
 source config.sh
-source activate gtdbtk
 module load anaconda3
+source activate gtdbtk
 module load prodigal 
 
 # Make gtdbtk directories
