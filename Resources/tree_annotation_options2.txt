@@ -1,12 +1,13 @@
-total_plotted_degrees   360
-start_rotation  0
-title   ESBL-E Sample Phylogeny
-title_font_size 16
-clade_separation        0.25
+ignore_branch_len	1
+total_plotted_degrees	360
+start_rotation	0
+title	ESBL-E Sample Phylogeny
+title_font_size	16
+clade_marker_font_size	2
 NCH0002R-M	clade_marker_label	Enterobacter
-NCH0016R-M  clade_marker_label  Escherichia
-NCH0126R-Mneg   clade_marker_label  Klebsiella
-NCH0126R-Mneg   clade_marker_label  Citrobacter
-PWH0027-I   clade_marker_label  Achromobacter
-PWH0100R-M  clade_marker_label  Pseudomonas
-PWH0104RW-M clade_marker_label  Proteus
+NCH0016R-M	clade_marker_label	Escherichia
+NCH0126R-Mneg	clade_marker_label	Klebsiella
+NCH0136-I	clade_marker_label	Citrobacter
+PWH0027-I	clade_marker_label	Achromobacter
+PWH0100R-M	clade_marker_label	Pseudomonas
+PWH0104RW-M	clade_marker_label	Proteus
