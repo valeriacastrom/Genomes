@@ -1,50 +1,53 @@
-total_plotted_degrees	360
-start_rotation	0
-title	ESBL-E Sample Phylogeny
-title_font_size	16
-clade_separation	0.25
-Enterobacter
-Enterobacter
-Enterobacter
-Escherichia
-Enterobacter
-Enterobacter
-Escherichia
-Enterobacter
-Escherichia
-Enterobacter
-Escherichia
-Escherichia
-Escherichia
-Escherichia
-Escherichia
-Escherichia
-Escherichia
-Escherichia
-Escherichia
-Enterobacter
-Klebsiella
-Citrobacter
-Citrobacter
-Citrobacter
-Escherichia
-Escherichia
-Enterobacter
-Escherichia
-Achromobacter
-Escherichia
-Escherichia
-Escherichia
-Enterobacter
-Klebsiella
-Citrobacter
-Citrobacter
-Klebsiella
-Citrobacter
-Citrobacter
-Enterobacter
-Pseudonomas
-Pseudonomas
-Pseudonomas
-Escherichia
-Proteus
+total_plotted_degrees   360
+start_rotation  0
+title   ESBL-E Sample Phylogeny
+title_font_size 16
+clade_separation        0.25
+PWH0086R-M  annotation_background_color     blue
+PWH0086R-M	clade_marker_label	PWH0086R-M
+NCH0002R-M	clade_marker_label	NCH0002R-M
+NCH0009R-M	clade_marker_label	NCH0009R-M
+NCH0012R-M	clade_marker_label	NCH0012R-M
+NCH0016R-M	clade_marker_label	NCH0016R-M
+NCH0018-I	clade_marker_label	NCH0018-I
+NCH0018R-M	clade_marker_label	NCH0018R-M
+NCH0023R-M	clade_marker_label	NCH0023R-M
+NCH0024-I	clade_marker_label	NCH0024-I
+NCH0031R-Mneg   clade_marker_label	NCH0031R-Mneg
+NCH0033R-M	clade_marker_label	NCH0033R-M
+NCH0047R-M	clade_marker_label	NCH0047R-M
+NCH0049R-M	clade_marker_label	NCH0049R-M
+NCH0076R-M	clade_marker_label	NCH0076R-M
+NCH0104P-I	clade_marker_label	NCH0104P-I
+NCH0104RP-M     clade_marker_label	NCH0104RP-M
+NCH0104RW-M     clade_marker_label	NCH0104RW-M
+NCH0104W-I	clade_marker_label	NCH0104W-I
+NCH0112-I	clade_marker_label	NCH0112-I
+NCH0112R-M	clade_marker_label	NCH0112R-M
+NCH0126-I	clade_marker_label	NCH0126-I
+NCH0126R-Mneg   clade_marker_label	NCH0126R-Mneg
+NCH0136-I	clade_marker_label	NCH0136-I
+NCH0136R-M	clade_marker_label	NCH0136R-M
+NCH0137-I	clade_marker_label	NCH0137-I
+NCH0138-I	clade_marker_label	NCH0138-I
+NCH0141R-M	clade_marker_label	NCH0141R-M
+PWH0017-I	clade_marker_label	PWH0017-I
+PWH0025V-M	clade_marker_label	PWH0025V-M
+PWH0027-I	clade_marker_label	PWH0027-I
+PWH0028-Ineg    clade_marker_label	PWH0028-Ineg
+PWH0031-I	clade_marker_label	PWH0031-I
+PWH0031R-M	clade_marker_label	PWH0031R-M
+PWH0041-I	clade_marker_label	PWH0041-I
+PWH0050-I	clade_marker_label	PWH0050-I
+PWH0060R-M	clade_marker_label	PWH0060R-M
+PWH0062R-M	clade_marker_label	PWH0062R-M
+PWH0073-I	clade_marker_label	PWH0073-I
+PWH0074R-M	clade_marker_label	PWH0074R-M
+PWH0086R-M	clade_marker_label	PWH0086R-M
+PWH0094R-M	clade_marker_label	PWH0094R-M
+PWH0100R-M	clade_marker_label	PWH0100R-M
+PWH0101R-M	clade_marker_label	PWH0101R-M
+PWH0103R-M	clade_marker_label	PWH0103R-M
+PWH0104RP-M     clade_marker_label	PWH0104RP-M
+PWH0104RW-M     clade_marker_label	PWH0104RW-M
+
