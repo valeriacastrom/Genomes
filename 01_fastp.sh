@@ -25,7 +25,8 @@ do
 	    j_sub="${j_basename%%_*}" # Identifier (characters before underscore)
 		if [[ $i_sub == $j_sub ]] # Match reads via accession
 		then
-			fastp -i ${i} -I ${j} --out1 ${i_sub}_fastp_out.R1.fastq.gz --out2 ${j_sub}_fastp_out.R2.fastq.gz --detect_adapter_for_pe --thread 16 --length_required 50 # Run fastp
+			#fastp -i ${i} -I ${j} --out1 ${i_sub}_fastp_out.R1.fastq.gz --out2 ${j_sub}_fastp_out.R2.fastq.gz --detect_adapter_for_pe --thread 16 --length_required 50 # Run fastp
+			echo "fastp -i ${i} -I ${j} --out1 ${i_sub}_fastp_out.R1.fastq.gz --out2 ${j_sub}_fastp_out.R2.fastq.gz --detect_adapter_for_pe --thread 16 --length_required 50 # Run fastp"
 		fi
 	done
 done
